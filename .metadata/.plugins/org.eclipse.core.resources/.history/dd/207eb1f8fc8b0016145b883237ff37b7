@@ -1,0 +1,90 @@
+package com.dincerunal.main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
+
+public class StringIslemleri {
+
+	public static void main(String[] args) throws IOException {
+		
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //System.out.print("Enter any string: ");
+       // String s = br.readLine();
+        String s = "azcab";
+        String yeniString ="";
+        int tekrarSayisi =2;
+        
+        
+        
+       // Vector<String> temp = new Vector<String>();
+     
+        HashMap temp = new HashMap();
+        
+        int l=s.length(); //finding the length of the string
+        temp = Frequency(s, l);
+        
+        
+        // Get a set of the entries
+        Set set = temp.entrySet();
+        
+        // Get an iterator
+        Iterator i = set.iterator();
+        
+        // Display elements
+        while(i.hasNext()) {
+           Map.Entry me = (Map.Entry)i.next();
+           //System.out.print(me.getKey() + ": ");
+           //System.out.println(me.getValue());
+           if (!(Integer.valueOf(me.getValue().toString()) < tekrarSayisi)) {
+        	   yeniString= s.replace(me.getValue().toString(), "");
+           }
+        }
+        
+        
+        System.out.println(yeniString);
+
+	}
+
+
+	
+	
+
+	private static HashMap Frequency(String s, int l) {
+		char ch;
+        HashMap cache = new HashMap();
+		
+        // Counting frequency of alphabets begins below
+        int count=0;
+        for(char i=' '; i<='~'; i++)
+            {
+                count = 0;
+                for(int j=0; j<l; j++)
+                {
+                    ch=s.charAt(j); //extracting characters of the string one by one
+                    if(ch==i) //first checking the whole string for 'a', then 'b' and so on
+                    	count++; //increasing count of those aplhabets which are present in the string
+
+                }
+                if(count!=0)//printing only those alphabets whose count is not '0'
+                {
+                    System.out.println(i+" "+count);
+                    cache.put(i, new Integer(count));
+                }
+            }
+   
+        return cache;
+	}
+
+	
+	
+	
+	
+
+}

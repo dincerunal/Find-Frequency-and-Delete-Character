@@ -1,0 +1,76 @@
+package com.dincerunal.main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+
+public class StringIslemleri {
+
+	public static void main(String[] args) throws IOException {
+		
+
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        //System.out.print("Enter any string: ");
+       // String s = br.readLine();
+        String s = "bazcab";
+        int tekrarSayisi =2;
+        
+        HashMap<Integer, String > temp = new HashMap<Integer, String>();
+        
+        
+        int l=s.length(); //finding the length of the string
+        temp = Frequency(s, l);
+       
+        
+        
+        if (s.contains(temp.get(2))) {
+			String stemp=s.replace(temp.get(2), "");
+			System.out.println(stemp);
+		}
+        
+        
+        
+        System.out.println("harf : " + temp.get(2));
+       
+        
+		
+	}
+
+	private static HashMap<Integer, String> Frequency(String s, int l) {
+		char ch;
+        HashMap<Integer, String> cache = new HashMap<Integer, String>();
+
+        // Counting frequency of alphabets begins below
+        int count=0;
+        for(char i=' '; i<='~'; i++)
+            {
+                count = 0;
+                for(int j=0; j<l; j++)
+                {
+                    ch=s.charAt(j); //extracting characters of the string one by one
+                    if(ch==i) //first checking the whole string for 'a', then 'b' and so on
+                    
+                    	count++; //increasing count of those aplhabets which are present in the string
+                    	
+                    
+                }
+                if(count!=0)//printing only those alphabets whose count is not '0'
+                {
+                    //System.out.println(i+" "+count);
+                    cache.put(count, i+"");
+                }
+            }
+        
+        return cache;
+	}
+
+	
+	
+	
+	
+
+}

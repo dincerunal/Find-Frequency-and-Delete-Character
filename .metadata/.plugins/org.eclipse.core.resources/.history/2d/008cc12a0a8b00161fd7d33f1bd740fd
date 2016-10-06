@@ -1,0 +1,70 @@
+package com.dincerunal.main;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+
+public class StringIslemleri {
+
+	public static void main(String[] args) throws IOException {
+		
+
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        //System.out.print("Enter any string: ");
+       // String s = br.readLine();
+        String s = "azcab";
+        int tekrarSayisi =2;
+        
+        Map<String, Object> temp = new HashMap<String, Object>();
+     
+        int l=s.length(); //finding the length of the string
+        temp = Frequency(s, l);
+        System.out.println("");
+
+	}
+
+
+	
+	
+
+	private static Map<String, Object> Frequency(String s, int l) {
+		char ch;
+		Map<String, Object> cache = new HashMap<String, Object>();
+
+        // Counting frequency of alphabets begins below
+        int count=0;
+        for(char i=' '; i<='~'; i++)
+            {
+                count = 0;
+                for(int j=0; j<l; j++)
+                {
+                    ch=s.charAt(j); //extracting characters of the string one by one
+                    if(ch==i) //first checking the whole string for 'a', then 'b' and so on
+                    	count++; //increasing count of those aplhabets which are present in the string
+                    	
+                    	cache.put(ch+"", count);
+                    	System.out.println("**eeded*");
+          
+                }
+                if(count!=0)//printing only those alphabets whose count is not '0'
+                {
+                    System.out.println(i+" "+count);
+                    cache.put(i+"", count);
+                    System.out.println("***");
+                }
+            }
+        
+        return cache;
+	}
+
+	
+	
+	
+	
+
+}

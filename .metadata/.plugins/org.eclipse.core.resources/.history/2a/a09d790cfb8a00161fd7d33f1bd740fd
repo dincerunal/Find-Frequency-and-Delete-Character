@@ -1,0 +1,153 @@
+package com.dincerunal.main;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class StringIslemleri {
+
+	public static void main(String[] args) {
+		String text="aaba kouq bux";
+		HashMap <String, Integer> hasmap = new HashMap<String, Integer >();
+		hasmap = StringIslemleri(text.trim());
+
+	}
+	
+	public static HashMap<String, Integer> StringIslemleri(String txt){
+		int a = 0,b = 0,c = 0,
+		ç = 0, d = 0, e = 0, f = 0, g = 0, ğ = 0, h = 0,  
+		i = 0, ı = 0, j = 0, k= 0, l= 0, m= 0, 
+		n= 0, o = 0, ö= 0, p = 0, r= 0, s= 0, ş= 0, t= 0, u= 0, ü= 0, v= 0, y= 0, z= 0;
+		
+		
+		 HashMap <String, Integer> hm = new HashMap<String, Integer >();
+		
+		for (int i2 = 0; i2 < txt.length(); i2++) {
+			System.out.println("test");
+			switch (txt.substring(i2, i2+1)) {
+			case "a":
+				a++;
+				hm.put("a", a);
+				break;
+			case "b":
+				
+				b++;
+				hm.put("b", a);
+				break;
+			case "c":
+				c++;
+				hm.put("c", c);
+				break;
+			case "ç":
+				ç++;
+				hm.put("ç", ç);
+				break;
+			case "d":
+				d++;
+				hm.put("d", d);
+				break;
+			case "e":
+				e++;
+				hm.put("e", e);
+				break;
+			case "f":
+				f++;
+				hm.put("f", f);
+				break;
+			case "g":
+				g++;
+				hm.put("g", g);
+				break;
+			case "ğ":
+				ğ++;
+				hm.put("ğ", ğ);
+				break;
+			case "h":
+				h++;
+				hm.put("h", h);
+				break;
+
+			case "i":
+				i++;
+				hm.put("i", i);
+				break;
+			case "ı":
+				ı++;
+				hm.put("ı", ı);
+				break;
+			case "j":
+				j++;
+				hm.put("j", j);
+				break;
+			case "k":
+				k++;
+				hm.put("k", k);
+				break;
+			case "l":
+				l++;
+				hm.put("l", l);
+				break;
+			case "m":
+				m++;
+				hm.put("m", m);
+				break;
+			case "n":
+				n++;
+				hm.put("n", n);
+				break;
+			case "o":
+				o++;
+				hm.put("o", o);
+				break;
+			case "ö":
+				ö++;
+				hm.put("ö", ö);
+				break;
+			case "p":
+				p++;
+				hm.put("p", p);
+				break;
+			case "r":
+				r++;
+				hm.put("r", r);
+				break;
+			case "s":
+				s++;
+				hm.put("s", s);
+				break;
+			case "ş":
+				ş++;
+				hm.put("ş",ş);
+				break;
+			case "t":
+				t++;
+				hm.put("t", t);
+				break;		
+			case "u":
+				u++;
+				hm.put("u", u);
+				break;
+			case "ü":
+				ü++;
+				hm.put("ü", ü);
+				break;
+			case "v":
+				v++;
+				hm.put("v", v);
+				break;
+			case "y":
+				y++;
+				hm.put("y", y);
+				break;
+			default:
+				z++;
+				hm.put("z", z);
+				break;
+			}
+		}
+		System.out.println("a sayisi : " + a);
+		
+		return hm;
+		
+	}
+
+}

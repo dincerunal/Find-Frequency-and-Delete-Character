@@ -1,0 +1,10 @@
+package com.dincerunal.main;
+
+public class StringIslemleri {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
